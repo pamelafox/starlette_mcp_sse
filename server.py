@@ -8,6 +8,11 @@ app = Starlette(
     routes=routes,
 )
 
-if __name__ == "__main__":
+
+def run():
     """Start the Starlette server"""
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+if __name__ == "__main__":
+    run()
