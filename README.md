@@ -1,5 +1,9 @@
 # Starlette MCP SSE
 
+<p align="center">
+  <strong>English</strong> | <a href="/README.zh-CN.md">简体中文</a>
+</p>
+
 A Server-Sent Events (SSE) implementation using Starlette framework with [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) integration.
 
 ## What is MCP?
@@ -82,7 +86,7 @@ uv pip install -r pyproject.toml
 Launch the integrated Starlette server with MCP SSE functionality:
 
 ```cmd
-python main.py
+python src/server.py
 ```
 
 or
@@ -143,7 +147,7 @@ The application structure makes it easy to add new routes:
 
 ### Customizing MCP Integration
 
-The MCP SSE functionality is integrated in main.py through:
+The MCP SSE functionality is integrated in server.py through:
 
 - Creating an SSE transport
 - Setting up an SSE handler
