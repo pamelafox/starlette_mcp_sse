@@ -1,15 +1,26 @@
 # Starlette MCP SSE
 
-A Server-Sent Events (SSE) implementation using Starlette framework.
+A Server-Sent Events (SSE) implementation using Starlette framework with Model Context Protocol (MCP) integration.
 
 ## Description
 
-This project demonstrates how to implement Server-Sent Events (SSE) using the Starlette framework.
+This project demonstrates how to implement Server-Sent Events (SSE) using the Starlette framework while integrating Model Context Protocol (MCP) functionality. The key feature is the seamless integration of MCP's SSE capabilities within a full-featured Starlette web application that includes custom routes.
 
 ## Features
 
-- Server-Sent Events (SSE) implementation
-- Starlette framework integration
+- Server-Sent Events (SSE) implementation with MCP
+- Starlette framework integration with custom routes
+- Unified web application with both MCP and standard web endpoints
+- Customizable route structure
+- Clean separation of concerns between MCP and web functionality
+
+## Architecture
+
+This project showcases a modular architecture that:
+
+1. Integrates MCP SSE endpoints (`/sse` and `/messages/`) into a Starlette application
+2. Provides standard web routes (`/`, `/about`, `/status`, `/docs`)
+3. Demonstrates how to maintain separation between MCP functionality and web routes
 
 ## Installation
 
@@ -40,9 +51,9 @@ uv pip install -r pyproject.toml
 
 ## Quick Start
 
-### Start the MCP Server
+### Start the Integrated Server
 
-Launch the SSE server:
+Launch the integrated Starlette server with MCP SSE functionality:
 
 ```cmd
 python main.py
@@ -51,11 +62,18 @@ python main.py
 The server will be available at:
 
 - Main server: http://localhost:8000
-- SSE endpoint: http://localhost:8000/sse
+- Standard web routes:
+  - Home page: http://localhost:8000/
+  - About page: http://localhost:8000/about
+  - Status API: http://localhost:8000/status
+  - Documentation: http://localhost:8000/docs
+- MCP SSE endpoints:
+  - SSE endpoint: http://localhost:8000/sse
+  - Message posting: http://localhost:8000/messages/
 
 ### Debug with MCP Inspector
 
-For testing and debugging, use the MCP Inspector:
+For testing and debugging MCP functionality, use the MCP Inspector:
 
 ```cmd
 mcp dev ./weather.py
@@ -78,3 +96,41 @@ mcp dev ./weather.py
 3. Select a function
 4. Enter required parameters
 5. Click `Run Tool` to execute
+
+## Extending the Application
+
+### Adding Custom Routes
+
+The application structure makes it easy to add new routes:
+
+1. Define new route handlers in routes.py
+2. Add routes to the routes list in routes.py
+3. The main application will automatically include these routes
+
+### Customizing MCP Integration
+
+The MCP SSE functionality is integrated in main.py through:
+
+- Creating an SSE transport
+- Setting up an SSE handler
+- Adding MCP routes to the Starlette application
+
+## Integration with [Continue](https://www.continue.dev/)
+
+To use this MCP server with the Continue VS Code extension, add the following configuration to your Continue settings:
+
+```json
+{
+  "experimental": {
+    "modelContextProtocolServers": [
+      {
+        "transport": {
+          "name": "weather",
+          "type": "sse",
+          "url": "http://localhost:8000/sse"
+        }
+      }
+    ]
+  }
+}
+```
