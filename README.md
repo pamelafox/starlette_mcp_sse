@@ -45,7 +45,7 @@ uv pip install -r pyproject.toml
 Launch the SSE server:
 
 ```cmd
-python weather.py
+python main.py
 ```
 
 The server will be available at:
