@@ -37,7 +37,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 Run the application directly without cloning the repository using UV's execution tool:
 
 ```cmd
-uvx --from git+https://github.com/panz2018/starlette_mcp_sse.git python src/server.py
+uvx --from git+https://github.com/panz2018/starlette_mcp_sse.git start
 ```
 
 ### Option 2: Full Installation
@@ -72,6 +72,12 @@ Launch the integrated Starlette server with MCP SSE functionality:
 
 ```cmd
 python main.py
+```
+
+or
+
+```cmd
+uv run start
 ```
 
 ### Available Endpoints
