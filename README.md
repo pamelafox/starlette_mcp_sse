@@ -22,17 +22,25 @@ This project showcases a modular architecture that:
 2. Provides standard web routes (`/`, `/about`, `/status`, `/docs`)
 3. Demonstrates how to maintain separation between MCP functionality and web routes
 
-## Installation
+## Installation & Usage Options
 
 ### Prerequisites
 
-Install UV Package Manager - A fast Python package installer written in Rust:
+Install [UV Package Manager](https://docs.astral.sh/uv/) - A fast Python package installer written in Rust:
 
 ```cmd
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### Virtual Environment Setup
+### Option 1: Quick Run Without Installation
+
+Run the application directly without cloning the repository using UV's execution tool:
+
+```cmd
+uvx --from git+https://github.com/panz2018/starlette_mcp_sse.git python src/server.py
+```
+
+### Option 2: Full Installation
 
 #### Create Virtual Environment
 
@@ -50,7 +58,7 @@ Activate the virtual environment to use it:
 .venv\Scripts\activate
 ```
 
-### Install Dependencies
+#### Install Dependencies
 
 Install all required packages:
 
@@ -58,9 +66,7 @@ Install all required packages:
 uv pip install -r pyproject.toml
 ```
 
-## Quick Start
-
-### Start the Integrated Server
+#### Start the Integrated Server
 
 Launch the integrated Starlette server with MCP SSE functionality:
 
@@ -68,7 +74,9 @@ Launch the integrated Starlette server with MCP SSE functionality:
 python main.py
 ```
 
-The server will be available at:
+### Available Endpoints
+
+After starting the server (using either Option 1 or Option 2), the following endpoints will be available:
 
 - Main server: http://localhost:8000
 - Standard web routes:
@@ -85,7 +93,7 @@ The server will be available at:
 For testing and debugging MCP functionality, use the MCP Inspector:
 
 ```cmd
-mcp dev ./weather.py
+mcp dev ./src/weather.py
 ```
 
 ### Connect to MCP Inspector
