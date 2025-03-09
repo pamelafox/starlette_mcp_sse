@@ -1,6 +1,17 @@
 # Starlette MCP SSE
 
-A Server-Sent Events (SSE) implementation using Starlette framework with Model Context Protocol (MCP) integration.
+A Server-Sent Events (SSE) implementation using Starlette framework with [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) integration.
+
+## What is MCP?
+
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open standard that enables AI models to interact with external tools and data sources. MCP solves several key challenges in AI development:
+
+- **Context limitations**: Allows models to access up-to-date information beyond their training data
+- **Tool integration**: Provides a standardized way for models to use external tools and APIs
+- **Interoperability**: Creates a common interface between different AI models and tools
+- **Extensibility**: Makes it easy to add new capabilities to AI systems without retraining
+
+This project demonstrates how to implement MCP using Server-Sent Events (SSE) in a Starlette web application.
 
 ## Description
 
