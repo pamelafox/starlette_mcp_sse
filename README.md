@@ -34,10 +34,19 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ### Virtual Environment Setup
 
-Set up an isolated Python environment for the project:
+#### Create Virtual Environment
+
+Create an isolated Python environment for the project:
 
 ```cmd
 uv venv
+```
+
+#### Activate Virtual Environment
+
+Activate the virtual environment to use it:
+
+```cmd
 .venv\Scripts\activate
 ```
 
