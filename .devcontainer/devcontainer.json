@@ -15,6 +15,9 @@
             ]
         }
     },
+    "containerEnv": {
+        "UV_LINK_MODE": "copy" // suppress uv hardlinking warnings
+    },
     "postCreateCommand": "pip install --upgrade uv && uv venv && uv pip install -e mcp_server && uv pip install -e mcp_client",
     "remoteUser": "vscode"
 }
