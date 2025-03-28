@@ -148,8 +148,6 @@ To deploy the application, you can use Docker to create a container image and th
     az containerapp compose create -g RESOURCEGROUP --environment CONTAINERAPPSENV --compose-file-path docker-compose.yaml
     ```
 
-az containerapp compose create -g test-container-apps-rg --environment test-container-apps-container --compose-file-path docker-compose.yaml
-
 > [!NOTE]
 > Once it deploys, update the SERVER_URL environment variable in the Azure portal to point to the new URL of your deployed application. Then check the Console logs once revision is deployed.
 >
