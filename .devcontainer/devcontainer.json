@@ -5,8 +5,7 @@
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:latest": {},
         "ghcr.io/devcontainers/features/node:latest": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
-        "ghcr.io/astral-sh/uv:latest": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
     },
     "customizations": {
         "vscode": {
@@ -16,6 +15,6 @@
             ]
         }
     },
-    "postCreateCommand": "uv venv && uv pip install -e mcp_server && uv pip install -e mcp_client",
+    "postCreateCommand": "pip install --upgrade uv && uv venv && uv pip install -e mcp_server && uv pip install -e mcp_client",
     "remoteUser": "vscode"
 }
