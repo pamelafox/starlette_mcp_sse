@@ -1,5 +1,5 @@
 [project]
-name = "starlette-mcp-sse"
+name = "mcp-server"
 version = "0.1.0"
 description = "A working example to create a starlette server with SSE-based MCP support"
 readme = "README.md"
