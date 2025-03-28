@@ -172,3 +172,15 @@ To use this MCP server with the Continue VS Code extension, add the following co
   }
 }
 ```
+
+## Deploy to Azure
+
+Run this command to deploy the application to Azure Container Apps:
+
+```shell
+az containerapp compose create -g RESOURCEGROUP --environment CONTAINERAPPSENV --compose-file-path docker-compose.yaml
+```
+
+Once it deploys, update the SERVER_URL environment variable in the Azure portal to point to the new URL of your deployed application. Then check the Console logs once revision is deployed.
+
+NOTE THAT THIS WILL EXPOSE IT PUBLICLY.

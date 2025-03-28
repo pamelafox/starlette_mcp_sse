@@ -1,22 +1,22 @@
 services:
-  mcp_server:
+  mcpserver:
     build:
       context: ./mcp_server
     ports:
       - "8000:8000"
     networks:
-      - mcp_network
+      - mcpnetwork
 
-  mcp_client:
+  mcpclient:
     build:
       context: ./mcp_client
     depends_on:
-      - mcp_server
+      - mcpserver
     environment:
       - SERVER_URL=http://mcp_server:8000
     networks:
-      - mcp_network
+      - mcpnetwork
 
 networks:
-  mcp_network:
+  mcpnetwork:
     driver: bridge
