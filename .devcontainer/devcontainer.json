@@ -1,7 +1,6 @@
 {
     "name": "starlette-mcp-server-quickstart",
     "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
-    "forwardPorts": [8000],
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:latest": {},
         "ghcr.io/devcontainers/features/node:latest": {},
@@ -14,6 +13,12 @@
                 "ms-azuretools.vscode-docker"
             ]
         }
+    },
+    "forwardPorts": [8000, 5173, 3000],
+    "portsAttributes": {
+        "8000": {"label": "MCP Server", "onAutoForward": "notify"},
+        "5173": {"label": "MCP Inspector", "onAutoForward": "notify"},
+        "3000": {"label": "MCP Proxy Server", "onAutoForward": "notify"}
     },
     "containerEnv": {
         "UV_LINK_MODE": "copy" // suppress uv hardlinking warnings
