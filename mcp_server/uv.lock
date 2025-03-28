@@ -1,5 +1,4 @@
 version = 1
-revision = 1
 requires-python = ">=3.13"
 
 [[package]]
@@ -38,7 +37,7 @@ name = "click"
 version = "8.1.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "colorama", marker = "platform_system == 'Windows'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz", hash = "sha256:ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a", size = 226593 }
 wheels = [
@@ -289,7 +288,7 @@ dependencies = [
     { name = "httpx" },
     { name = "mcp", extra = ["cli"] },
     { name = "starlette" },
-    { name = "unicorn" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -297,7 +296,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.3.0" },
     { name = "starlette", specifier = ">=0.46.1" },
-    { name = "unicorn", specifier = ">=2.1.3" },
+    { name = "uvicorn", specifier = ">=0.34.0" },
 ]
 
 [[package]]
@@ -322,23 +321,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8", size = 85321 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d", size = 37438 },
-]
-
-[[package]]
-name = "unicorn"
-version = "2.1.3"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/51/40/52d9961c488d9a45c7ed26f76b50e70f0d562d7fafd936121303cc7500ad/unicorn-2.1.3.tar.gz", hash = "sha256:0c06456cf550c228f2003cc70366afa4aece2e6e7e4c32d8f4b22c717ba6b729", size = 2860875 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a1/5b/d30bfab4577adbf8e7838637f22ae2353b06cf7f743152debf25f6e3219b/unicorn-2.1.3-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e86b20464b1332248b22185b06fe5a56d4913648f9a41e7286ca83b3fc443747", size = 12901727 },
-    { url = "https://files.pythonhosted.org/packages/d6/31/d15f3217a26c9defd1aa1bc23b9dfde64a7a04c21d28e4d46670d329612f/unicorn-2.1.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cea0462b08e94a6b5764692b47ffa6bf2cb6d47fecd6939c874da5165dbd4ba6", size = 15310145 },
-    { url = "https://files.pythonhosted.org/packages/cf/83/1eac513d57de232570be624cfc4ee6ea5d9ee370a7e795e7d1a2e9bd4562/unicorn-2.1.3-cp313-cp313-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:67d0462f66ba961079728ff74eaf8233fba48dadea80313c0dad5ac4ba8a80be", size = 19753425 },
-    { url = "https://files.pythonhosted.org/packages/d9/45/d9902bef41673c8de08bd7bc0ee8756e5afa982264d84997eb8f4b4c6984/unicorn-2.1.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dabf178a2ad5894556258d38ed9d9b9c3adca4ced10ee3d3ace772b47d02b1c8", size = 16350568 },
-    { url = "https://files.pythonhosted.org/packages/d9/c0/bf271847a4193fd1ccdcdf0ba30067c37b3b2de66254153366d396e014b1/unicorn-2.1.3-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:cc9d2b422993baa314c124f81918b9be5fb814301c8dd48a3c2b91c847951936", size = 15854996 },
-    { url = "https://files.pythonhosted.org/packages/9f/9c/0e88e751e52b87301d924ed054ac647afe3ed570d5a0bdbb5d35fdb616bb/unicorn-2.1.3-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:f21e05586d48414eb53a8b6a6a79f162d58feffe31a2537816665bf4d0f188ea", size = 20401044 },
-    { url = "https://files.pythonhosted.org/packages/8f/ba/626d86da323e4ee99addd0ebbf6a84c591331149155c90f8e50a569fd1b3/unicorn-2.1.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:a7d0cb2fd742a0914e3dfb52a41b255bdd31937ab2da449dd750ad4cc0558407", size = 16685422 },
-    { url = "https://files.pythonhosted.org/packages/84/5f/118641bb6d34493c9b7cb46e3b0228b168280f9962c06a6be523f3effa47/unicorn-2.1.3-cp313-cp313-win32.whl", hash = "sha256:ff37f0307f78d1fd43420790307d684f36f56d5d8b1ad102986f99bcbfb03ecb", size = 11760195 },
-    { url = "https://files.pythonhosted.org/packages/d3/dd/fc08dcabe1b0a38a2d0d560a06213c88fe0b6de09b956273e6800c33210c/unicorn-2.1.3-cp313-cp313-win_amd64.whl", hash = "sha256:1f218e51ed5e9047575ef6200a6acfacf3ee545e3a9df905445a01101399296e", size = 15872963 },
 ]
 
 [[package]]
