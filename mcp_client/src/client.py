@@ -1,9 +1,13 @@
+import os
 from mcp import ClientSession
 from mcp.client.sse import sse_client
 
 
 async def run():
-    async with sse_client("http://localhost:8000/sse") as streams:
+    server_url = os.environ.get("SERVER_URL", "http://localhost:8000")
+    sse_url = f"{server_url}/sse"
+    
+    async with sse_client(sse_url) as streams:
         async with ClientSession(streams[0], streams[1]) as session:
             # Initialize the connection
             await session.initialize()
