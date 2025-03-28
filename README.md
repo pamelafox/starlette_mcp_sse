@@ -157,7 +157,7 @@ To deploy the application, you can use Docker to create a container image and th
 
 ### MCP Server
 
-Assuming you've run the steps to [open the project](#getting-started), you can now run the Quart app in your development environment:
+Assuming you've run the steps to [open the project](#getting-started) or [local environment](#local-environment) you can now run the MCP server in your development environment:
 
 Launch the integrated Starlette server with MCP SSE functionality:
 
