@@ -1,0 +1,26 @@
+{
+    "name": "starlette-mcp-server-quickstart",
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile",
+        "args": {
+            "PYTHON_IMAGE": "python:3.13-slim-bookworm",
+        }
+    },
+    "forwardPorts": [8000],
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:latest": {},
+        "ghcr.io/devcontainers/features/node:latest": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "postCreateCommand": "uv venv && uv pip install -e mcp_server && uv pip install -e mcp_client",
+    "remoteUser": "vscode"
+}
