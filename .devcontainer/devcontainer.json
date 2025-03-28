@@ -1,17 +1,12 @@
 {
     "name": "starlette-mcp-server-quickstart",
-    "build": {
-        "context": "..",
-        "dockerfile": "Dockerfile",
-        "args": {
-            "PYTHON_IMAGE": "python:3.13-slim-bookworm",
-        }
-    },
+    "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
     "forwardPorts": [8000],
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:latest": {},
         "ghcr.io/devcontainers/features/node:latest": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
+        "ghcr.io/astral-sh/uv:latest": {}
     },
     "customizations": {
         "vscode": {
