@@ -78,7 +78,7 @@ Activate the virtual environment to use it:
 Install all required packages:
 
 ```cmd
-uv pip install -r pyproject.toml
+uv pip install -e mcp_server
 ```
 
 #### Start the Integrated Server
